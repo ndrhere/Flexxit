@@ -1,3 +1,0 @@
-[build]
-  command = "cd flexxit && npm install && npm run build"
-  publish = "flexxit/build"
