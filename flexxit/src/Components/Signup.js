@@ -4,16 +4,12 @@ import { useState } from 'react';
 import poster from './netflix-recommendations-main5.webp';
 
 const Signup = () => {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:7000'
+    const backendUrl = 'flexxit-api.vercel.app'
     const [register, setRegister] = useState({name: '', email: '', password: '', cpassword: ''})
    
 
     const navigate = useNavigate()
-
-   
-
-
-     const handleChange = (e) =>{
+      const handleChange = (e) =>{
       setRegister({...register, [e.target.name]: e.target.value})
     }
     
