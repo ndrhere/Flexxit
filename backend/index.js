@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoDB = require('./db');
-const port = 7000
+const port = process.env.PORT || 7000
 const app = express();
 const User = require('./Schema/UserSchema')
 const bcrypt = require('bcryptjs')
@@ -11,7 +11,12 @@ const Details = require('./Schema/DetailsSchema')
 const cors = require('cors')
 const secretKey = "mysecretKey"
 app.use(express.json())
-app.use(cors())
+const corsOptions = {
+ origin: '',
+ methods: 'GET, POST',
+ credentials: true
+}
+app.use(cors(corsOptions))
 mongoDB();
 
 
