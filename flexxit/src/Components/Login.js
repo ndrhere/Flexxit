@@ -8,8 +8,7 @@ const Login = () => {
   const navigate = useNavigate()
 
   const [login, setLogin] = useState({email:"", password:""})
-  const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:7000'
-
+  const backendUrl = 'flexxit-api.vercel.app'
   const handleChange = (event) =>{
     setLogin({...login, [event.target.name]: event.target.value})
   }
