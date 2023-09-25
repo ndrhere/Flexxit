@@ -4,7 +4,7 @@ import { useState } from 'react';
 import poster from './netflix-recommendations-main5.webp';
 
 const Signup = () => {
-    const port = 'http://localhost:7000'
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:7000'
     const [register, setRegister] = useState({name: '', email: '', password: '', cpassword: ''})
    
 
@@ -24,7 +24,7 @@ const Signup = () => {
     
     const handleClick = async(e) =>{
         e.preventDefault();
-        const response = await fetch(`${port}/createuser`, {
+        const response = await fetch(`${backendUrl}/createuser`, {
             method:"POST",
             headers: {
                 "Content-Type": "application/json",
