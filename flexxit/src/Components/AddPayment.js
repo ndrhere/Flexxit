@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
 
 const AddPayment = () => {
-    const port = 'http://localhost:7000'
+    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:7000'
     const navigate = useNavigate()
     const [values, setValues] = useState({CardNumber:null, ExpirationDate: "", CVV: null, FirstName:"", LastName: ""})
     const handleChange = (event) =>{
@@ -15,7 +15,7 @@ const AddPayment = () => {
     event.preventDefault()
     
 
-    const response = await fetch(`${port}/addpayment`,{
+    const response = await fetch(`${backendUrl}/addpayment`,{
      method: "POST",
      headers: {
         "Content-Type": "application/json"
