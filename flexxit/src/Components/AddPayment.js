@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import { useNavigate } from 'react-router-dom';
 
 const AddPayment = () => {
-    const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:7000'
+    const backendUrl = 'flexxit-api.vercel.app'
     const navigate = useNavigate()
     const [values, setValues] = useState({CardNumber:null, ExpirationDate: "", CVV: null, FirstName:"", LastName: ""})
     const handleChange = (event) =>{
