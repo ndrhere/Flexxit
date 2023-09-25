@@ -4,7 +4,7 @@ import { useState } from 'react';
 import poster from './netflix-recommendations-main5.webp';
 
 const Signup = () => {
-    const backendUrl = 'flexxit-api.vercel.app'
+    const backendUrl = 'https://flexxit-api.vercel.app'
     const [register, setRegister] = useState({name: '', email: '', password: '', cpassword: ''})
    
 
