@@ -12,7 +12,7 @@ const cors = require('cors')
 const secretKey = "mysecretKey"
 app.use(express.json())
 const corsOptions = {
- origin: 'flexxit-api.vercel.app',
+ origin: 'https://flexxit-frontend.vercel.app',
  methods: 'GET, POST',
  credentials: true
 }
