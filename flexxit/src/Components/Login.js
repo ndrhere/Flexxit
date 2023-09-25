@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate()
 
   const [login, setLogin] = useState({email:"", password:""})
-  const port = 'http://localhost:7000'
+  const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:7000'
 
   const handleChange = (event) =>{
     setLogin({...login, [event.target.name]: event.target.value})
@@ -16,7 +16,7 @@ const Login = () => {
 
   const handleClick = async (event) =>{
   event.preventDefault();
-  const response = await fetch(`${port}/login`,{
+  const response = await fetch(`${backendUrl}/login`,{
   method: 'POST',
   headers: {
   "Content-Type": "application/json"
